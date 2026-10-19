@@ -642,7 +642,7 @@ class file_storage implements H5PFileStorage {
             $subpath = $it->getSubPath();
             if (!$item->isDir()) {
                 $options['filename'] = $it->getFilename();
-                if (!$subpath == '') {
+                if ($subpath !== '') {
                     $options['filepath'] = $root . $subpath . '/';
                 } else {
                     $options['filepath'] = $root;
