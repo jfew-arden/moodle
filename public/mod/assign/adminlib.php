@@ -209,7 +209,7 @@ class assign_plugin_manager {
             }
 
             $movelinks = '';
-            if (!$idx == 0) {
+            if ($idx !== 0) {
                 $movelinks .= $this->format_icon_link('moveup', $plugin, 't/up', get_string('up'));
             } else {
                 $movelinks .= $OUTPUT->spacer(array('width'=>16));

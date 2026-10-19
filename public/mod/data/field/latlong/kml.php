@@ -48,7 +48,7 @@ if ($rid) {
     if (! $field = $DB->get_record('data_fields', array('id'=>$fieldid))) {
         throw new \moodle_exception('invalidfieldid', 'data');
     }
-    if (! $field->type == 'latlong') { // Make sure we're looking at a latlong data type!
+    if ($field->type !== 'latlong') { // Make sure we're looking at a latlong data type!
         throw new \moodle_exception('invalidfieldtype', 'data');
     }
     if (! $content = $DB->get_record('data_content', array('fieldid'=>$fieldid, 'recordid'=>$rid))) {
@@ -67,7 +67,7 @@ if ($rid) {
     if (! $field = $DB->get_record('data_fields', array('id'=>$fieldid))) {
         throw new \moodle_exception('invalidfieldid', 'data');
     }
-    if (! $field->type == 'latlong') { // Make sure we're looking at a latlong data type!
+    if ($field->type !== 'latlong') { // Make sure we're looking at a latlong data type!
         throw new \moodle_exception('invalidfieldtype', 'data');
     }
     $record = NULL;
